@@ -1,20 +1,20 @@
 /* ************************************************************************** */
-
+/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   tests.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/12 17:34:31 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 17:36:26 by abisiani         ###   ########.fr       */
+/*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
+/*   Updated: 2025/05/15 16:13:22 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
-#include "libft.h"
+#include <stdio.h>
 #include <bsd/string.h>
+#include "libft.h"
 
 void	test_isalpha(void)
 {
@@ -210,6 +210,35 @@ void	test_strlcpy(void)
 	printf("ft_strlcpy	OK\n");
 }
 
+void	test_strlcat(void)
+{
+	// char	ptr_to_dest[15];
+	// char	*ptr_to_src;
+	// // At i == 12, src and a '\0' have beedn written to dst, meaning the assert 
+	// // will fail.
+	// for(int i = 0; i < 5; i++)
+	// {
+	// 	bzero(ptr_to_dest, 15);
+	// 	memset(ptr_to_dest, 'x', 4);
+	// 	ptr_to_src = "Catted\0";
+	// 	printf(" strlcat with size %d\n", i);
+	// 	printf("\n dest: %s\n", ptr_to_dest);
+	// 	printf(" src: %s\n\n", ptr_to_src);
+	// 	printf(" orig: %zu\n", strlcat(ptr_to_dest, ptr_to_src, i));
+	// 	printf(" dest: %s\n", ptr_to_dest);
+	// 	printf(" src: %s\n", ptr_to_src);
+	// 	bzero(ptr_to_dest, 15);
+	// 	memset(ptr_to_dest, 'x', 4);
+	// 	printf(" mine: %zu\n", ft_strlcat(ptr_to_dest, ptr_to_src, i));
+	// 	printf(" dest: %s\n", ptr_to_dest);
+	// 	printf(" src: %s\n\n", ptr_to_src);
+	// 	assert(ft_strlcat(ptr_to_dest, ptr_to_src, i) == \
+	// 		strlcat(ptr_to_dest, ptr_to_src, i));
+	// 	printf("~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+	// }
+	printf("ft_strlcat	Cursed Beyond All Understanding\n");
+}
+
 void	test_tolower(void)
 {
 	assert(ft_tolower('A') == 'a');
@@ -252,7 +281,7 @@ int	main(void)
 	test_memcpy();
 	test_memmove();
 	test_strlcpy();
-	// test_strlcat();
+	test_strlcat();
 	test_tolower();
 	test_toupper();
 	// test_strchr();

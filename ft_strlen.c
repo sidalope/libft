@@ -6,20 +6,18 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:43:35 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 12:55:01 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/15 14:56:47 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stddef.h>
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *s)
 {
-	int	str_length;
+	int	length;
 
-	str_length = 0;
-	if (*str)
-	{
-		str_length += ft_strlen(++str) + 1;
-	}
-	return (str_length);
+	length = 0;
+	while (s[length])
+		length++;
+	return (length);
 }
