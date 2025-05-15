@@ -6,15 +6,13 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:45:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 12:55:41 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/15 11:43:39 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <bsd/string.h>
+#include <stddef.h>
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	len;
 	int				src_len;
@@ -30,7 +28,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	if (size <= len)
 		return (dest_len + src_len);
 	size = size - 1 - len;
-	while (*src && size)
+	while (*src++ && size)
 	{
 		dest[len] = *src;
 		len++;
