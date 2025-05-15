@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:34:31 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/12 19:54:57 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/13 12:56:37 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,26 @@ void	test_isalnum(void)
 	printf("ft_isalnum OK\n");
 }
 
+void	test_isascii(void)
+{
+	assert(ft_isascii('0') == 1);
+	assert(ft_isascii('A') == 1);
+	assert(ft_isascii('\n') == 1);
+	assert(ft_isascii(0) == 1);
+	assert(ft_isascii(127) == 0);
+	assert(ft_isascii(-1) == 0);
+	assert(ft_isascii(128) == 0);
+	assert(ft_isascii(466) == 0);
+	printf("ft_isascii OK\n");
+}
+
+void	test_isprint(void)
+{
+	printf("ft_isprint OK\n");
+}
+
+
+
 void	test_tolower(void)
 {
 	assert(ft_tolower('A') == 'a');
@@ -73,8 +93,35 @@ int	main(void)
 {
 	test_isalpha();
 	test_isdigit();
-
+	test_isalnum();
+	test_isascii();
+	test_isprint();
+	test_strlen();
+	// test_memset();
+	// test_bzero();
+	// test_memcpy();
+	// test_memmove();
+	// test_strlcpy();
 	test_tolower();
 	test_toupper();
+	// test_strlcat();
+	// test_strchr();
+	// test_strrchr();
+	// test_strncmp();
+	// test_memchr();
+	// test_memcmp();
+	// test_strnstr();
+	// test_atoi();
+	// test_substr();
+	// test_strjoin();
+	// test_strtrim();
+	// test_split();
+	// test_itoa();
+	// test_strmapi();
+	// test_striteri();
+	// test_putchar_fd();
+	// test_putstr_fd();
+	// test_putendl_fd();
+	// test_putnbr_fd();
 	return (0);
 }

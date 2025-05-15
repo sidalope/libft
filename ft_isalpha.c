@@ -6,11 +6,11 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:15:51 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/12 18:12:03 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/13 12:38:47 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
