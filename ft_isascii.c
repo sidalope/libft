@@ -6,13 +6,13 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:33:06 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 12:46:02 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:13:21 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	if (c >= 0 && c <+ 127)
+	if (c >= 0 && c <= 127)
 	{
 		return (1);
 	}

@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 13:04:13 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 11:22:03 by abisiani         ###   ########.fr       */
+/*   Created: 2025/05/14 18:09:08 by abisiani          #+#    #+#             */
+/*   Updated: 2025/05/14 18:31:32 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include <stddef.h>
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	unsigned char	*d;
+	const unsigned char	*s;
+
+	d = (unsigned char *) dest;
+	s = (const unsigned char *) src;
+	while (n--)
+	{
+		*d++ = (unsigned char) *s++;
+	}
+	return (dest);
 }

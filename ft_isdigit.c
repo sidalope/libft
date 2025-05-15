@@ -6,11 +6,11 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 18:16:56 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/12 19:46:25 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:09:53 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 	{

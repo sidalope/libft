@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 13:04:13 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 11:22:03 by abisiani         ###   ########.fr       */
+/*   Created: 2025/05/14 16:06:13 by abisiani          #+#    #+#             */
+/*   Updated: 2025/05/14 16:35:32 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include <stddef.h>
+
+void	bzero(void *s, size_t n)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *) s;
+	while (n--)
+	{
+		*ptr++ = (unsigned char) '\0';
+	}
 }

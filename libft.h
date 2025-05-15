@@ -6,14 +6,14 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:15:17 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 11:19:51 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/15 11:24:51 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stddef.h>
+# include <stddef.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -22,11 +22,10 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 size_t	ft_strlen(char *s);
 void	*ft_memset(void *b, int c, size_t len);
-
-// ft_bzero();
-// ft_memcpy();
-// ft_memmove();
-// ft_strlcpy();
+void	bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+size_t	strlcpy(char * restrict dst, const char * restrict src, size_t dstsize);
 // ft_strlcat();
 // ft_strchr();
 // ft_strrchr();
@@ -34,7 +33,7 @@ void	*ft_memset(void *b, int c, size_t len);
 // ft_memchr();
 // ft_memcmp();
 // ft_strnstr();
-// ft_atoi();
+// int		ft_atoi(const char *str);
 // ft_substr();
 // ft_strjoin();
 // ft_strtrim();
