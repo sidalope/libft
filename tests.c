@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:34:31 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 12:56:37 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/13 13:24:15 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ void	test_isascii(void)
 
 void	test_isprint(void)
 {
+	assert(ft_isprint(' ') == 1);
+	assert(ft_isprint(126) == 1);
+	assert(ft_isprint(127) == 0);
+	assert(ft_isprint(-1) == 0);
+	assert(ft_isprint(30) == 0);
 	printf("ft_isprint OK\n");
 }
 
@@ -96,7 +101,7 @@ int	main(void)
 	test_isalnum();
 	test_isascii();
 	test_isprint();
-	test_strlen();
+	//test_strlen();
 	// test_memset();
 	// test_bzero();
 	// test_memcpy();
