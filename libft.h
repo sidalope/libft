@@ -6,20 +6,23 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:15:17 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 13:22:28 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/15 11:18:51 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#include <stddef.h>
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-// ft_strlen();
-// ft_memset();
+size_t	ft_strlen(char *s);
+void	*ft_memset(void *b, int c, size_t len);
+
 // ft_bzero();
 // ft_memcpy();
 // ft_memmove();
