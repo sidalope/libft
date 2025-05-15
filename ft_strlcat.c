@@ -6,14 +6,11 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:45:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 16:23:41 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/15 16:27:02 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "libft.h"
-
-#include <stdio.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -35,6 +32,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
+
 	// char		*d;
 	// const char	*s;
 	// (void)size;
