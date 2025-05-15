@@ -6,18 +6,20 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:51:49 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 19:29:57 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:06:36 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char *ptr = b;
-	while(len--)
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *) s;
+	while (n--)
 	{
-		*ptr++ = (unsigned char)c;
+		*ptr++ = (unsigned char) c;
 	}
-	return (b);
+	return (s);
 }

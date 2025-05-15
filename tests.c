@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include <assert.h>
+#include <stdlib.h>
 #include "libft.h"
 
 void	test_isalpha(void)
@@ -74,14 +75,17 @@ void	test_strlen(void)
 
 void	test_memset(void)
 {
-	char	*str;
+	void	*ptr_to_set;
+	char	*ptr_to_view;
 
-	str = "123456789";
-	//assert(ft_memset(str, 'f', 3) == str);
-	// str = "123456789";
-	assert(ft_memset(str, 68, 1) == str);
-	assert(str[0] == '1');
-	// assert(str[0] == 'f' && str[1] == 'f' && str[2] == 'f' && str[3] == '4');
+	ptr_to_set = malloc(10);
+	ptr_to_view = (char *) ptr_to_set;
+	assert(ft_memset(ptr_to_set, 50, 0) == ptr_to_set);
+	assert(ft_memset(ptr_to_set, 50, 1) == ptr_to_set);
+	assert(ptr_to_view[0] == 50);
+	assert(ft_memset(ptr_to_set, 'f', 3) == ptr_to_set);
+	assert(ptr_to_view[0] == 'f' && ptr_to_view[1] == 'f' \
+		&& ptr_to_view[2] == 'f' && ptr_to_view[3] != 'f');
 	printf("ft_memset	OK\n");
 }
 

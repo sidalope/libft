@@ -6,13 +6,13 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 13:04:13 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 13:25:03 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/15 11:21:12 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isprint(int c)
 {
-	if (c >= 0 && (c < ' ' || c >= 127))
-		return (0);
-	return (1);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }
