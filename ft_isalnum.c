@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/12 15:15:51 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/12 18:12:03 by abisiani         ###   ########.fr       */
+/*   Created: 2025/05/12 19:51:07 by abisiani          #+#    #+#             */
+/*   Updated: 2025/05/12 19:53:32 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+int		ft_isalnum(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
-		return (0);
+	if (ft_isalpha(c) || ft_isdigit(c))
+	{
+		return (c);
+	}
+	return (0);
 }

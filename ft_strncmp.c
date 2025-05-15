@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/12 15:15:51 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/12 18:12:03 by abisiani         ###   ########.fr       */
+/*   Created: 2025/05/12 17:44:46 by abisiani          #+#    #+#             */
+/*   Updated: 2025/05/12 17:44:47 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+
+#include <stdio.h>
+#include <string.h>
+
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
+	if (!n)
 		return (0);
+	while (*s1 && *s2 && (*s1 == *s2) && n - 1)
+	{
+		s1++;
+		s2++;
+		n--;
+	}
+	return (*s1 - *s2);
 }
