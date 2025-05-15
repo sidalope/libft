@@ -6,20 +6,29 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 01:29:16 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 01:37:03 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/15 13:33:11 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdio.h>
 
-size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
+	int			i;
+	char		*d;
+	const char	*s;
 
 	i = 0;
-	(void)dst;
-	(void)dstsize;
-	while(src++)
+	d = dst;
+	s = src;
+	while (size-- && s[i])
+	{
+		d[i] = s[i];
+		i++;
+	}
+	i = 0;
+	while (s[i])
 	{
 		i++;
 	}

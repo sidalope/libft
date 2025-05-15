@@ -14,6 +14,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include "libft.h"
+#include <bsd/string.h>
 
 void	test_isalpha(void)
 {
@@ -162,23 +163,51 @@ void	test_memmove(void)
 	ptr_to_view = (char *) ptr_to_dest;
 	ft_memset(ptr_to_dest, '2', 10);
 	ft_memset(ptr_to_src, '4', 3);
-	for(int i = 0; i < 10; i++)
-	{
-		printf("%c ", ptr_to_view[i]);
-	}
-	printf("\n");
+	// for(int i = 0; i < 10; i++)
+	// {
+	// 	printf("%c ", ptr_to_view[i]);
+	// }
+	// printf("\n");
 	ft_memmove(ptr_to_dest, ptr_to_src, 2);
-	for(int i = 0; i < 10; i++)
-	{
-		printf("%c ", ptr_to_view[i]);
-	}
-	printf("\n");
+	// for(int i = 0; i < 10; i++)
+	// {
+	// 	printf("%c ", ptr_to_view[i]);
+	// }
+	// printf("\n");
 	printf("ft_memmove	OK\n");
 }
 
 void	test_strlcpy(void)
 {
-	printf("ft_strlcpy	OK");
+	char	*ptr_to_dest;
+	char	*ptr_to_src;
+	char 	a;
+	char	b;
+
+	ptr_to_dest = malloc(25);
+	ptr_to_src = "Copied\0";
+	memset(ptr_to_dest, 'x', 10);
+	// printf("%zu\n", ft_strlcpy(ptr_to_dest, ptr_to_src, 3));
+	// memset(ptr_to_dest, 'x', 10);
+	// printf("%zu\n", strlcpy(ptr_to_dest, ptr_to_src, 3));
+	// memset(ptr_to_dest, 'x', 10);
+	a = ft_strlcpy(ptr_to_dest, ptr_to_src, 0);
+	b = strlcpy(ptr_to_dest, ptr_to_src, 0);
+	assert(a == b);
+	memset(ptr_to_dest, 'x', 10);
+	a = ft_strlcpy(ptr_to_dest, ptr_to_src, 3);
+	b = strlcpy(ptr_to_dest, ptr_to_src, 3);
+	assert(a == b);
+	memset(ptr_to_dest, 'x', 10);
+	a = ft_strlcpy(ptr_to_dest, ptr_to_src, 25);
+	b = strlcpy(ptr_to_dest, ptr_to_src, 25);
+	assert(a == b);
+	memset(ptr_to_dest, 'x', 10);
+	a = ft_strlcpy(ptr_to_dest, ptr_to_src, 26);
+	b = strlcpy(ptr_to_dest, ptr_to_src, 26);
+	assert(a == b);
+	free(ptr_to_dest);
+	printf("ft_strlcpy	OK\n");
 }
 
 void	test_tolower(void)

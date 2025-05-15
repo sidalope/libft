@@ -6,7 +6,7 @@
 #    By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/12 15:15:30 by abisiani          #+#    #+#              #
-#    Updated: 2025/05/15 11:24:55 by abisiani         ###   ########.fr        #
+#    Updated: 2025/05/15 12:58:22 by abisiani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ test:
 	gdb ./tests
 
 $(NAME): $(ARCHIVE) $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $(NAME).c -L. -lft
+	$(CC) $(CFLAGS) -o $@ $(NAME).c -L. -lft -lbsd
 	./$(NAME)
 
 $(ARCHIVE): $(OBJ)
