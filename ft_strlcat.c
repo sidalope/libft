@@ -6,11 +6,12 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:45:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 16:27:02 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/15 18:20:36 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

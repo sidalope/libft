@@ -6,7 +6,7 @@
 #    By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/12 15:15:30 by abisiani          #+#    #+#              #
-#    Updated: 2025/05/19 15:15:14 by abisiani         ###   ########.fr        #
+#    Updated: 2025/05/19 17:02:01 by abisiani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,6 @@ clean:
 	rm -f $(NAME) $(ARCHIVE)
 
 fclean: clean
-	rm -f *~ \#* *.out
 	rm -f $(OBJ)
 
 re: fclean all
