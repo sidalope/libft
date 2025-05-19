@@ -6,26 +6,13 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:55:28 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 12:55:33 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:39:42 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-// int	main(void)
-// {
-// 	printf("%i\n", ft_atoi(""));
-// 	printf("%i\n", ft_atoi("5hj"));
-// 	printf("%i\n", ft_atoi("++-+++++598567"));
-// 	printf("%i\n", ft_atoi("-+++++++598567"));
-// 	printf("%i\n", ft_atoi("-+++-+++598567"));
-// 	printf("%i\n", ft_atoi("      -+-+-+++598567"));
-// 	printf("%i\n", ft_atoi("     -+-+-+++598567dtntn"));
-// 	printf("%i\n", ft_atoi("    -+-+-+++598567xndn4568568"));
-// 	return (0);
-// }
-
-char	*skip_whitespace(char *str)
+const char	*skip_whitespace(const char *str)
 {
 	while (*str == ' ' || *str == '\n' || *str == '\t' || 
 		*str == '\v' || *str == '\f' || *str == '\r')
@@ -33,30 +20,29 @@ char	*skip_whitespace(char *str)
 	return (str);
 }
 
-int	ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int			len;
-	int			minuses;
+	int			minus;
 	int			i;
 
 	len = 0;
-	minuses = 0;
+	minus = 0;
 	i = 0;
 	if (*str)
 	{
 		str = skip_whitespace(str);
-		while (*str == '+' || *str == '-')
+		if (*str == '-')
 		{
-			if (*str == '-')
-				minuses++;
+			minus = 1;
 			str++;
 		}
-		while (str[len] >= '0' && str[len] <= '9')
+			while (str[len] >= '0' && str[len] <= '9')
 		{
 			i = i * 10 + str[len] - '0';
 			len++;
 		}
-		if (minuses % 2)
+		if (minus)
 			i *= -1;
 	}
 	return (i);
