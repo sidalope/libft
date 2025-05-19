@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/19 15:43:44 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:45:32 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -376,7 +376,7 @@ int	main(void)
 	test_toupper();
 	test_strchr();
 	test_strrchr();
-	// test_strncmp();
+	test_strncmp();
 	// test_memchr();
 	// test_memcmp();
 	// test_strnstr();

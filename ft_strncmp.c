@@ -6,14 +6,14 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:44:46 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 12:55:59 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:26:40 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
+#include <stddef.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if (!n)
 		return (0);
@@ -23,5 +23,9 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		s2++;
 		n--;
 	}
+	if (*s1 < *s2)
+		return (-1);
+	else if (*s1 > *s2)
+		return (1);
 	return (*s1 - *s2);
 }
