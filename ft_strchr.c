@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 18:08:40 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 18:25:50 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:59:40 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i] == c)
-			return (char *)(s += i);
+			return ((char *)(s += i));
 		i++;
 	}
-	return (char *)(s += i);
+	return ((char *)(s += i));
 }
