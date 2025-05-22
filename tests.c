@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/22 22:20:35 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/22 23:03:27 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -454,7 +454,7 @@ void	test_atoi(void)
 
 void	test_calloc(void)
 {
-	printf("ft_calloc  	OK\n");
+	printf("ft_calloc  	WIP\n");
 }
 
 int	main(void)
