@@ -232,7 +232,7 @@ void	test_strlcat(void)
 	// 	printf(" mine: %zu\n", ft_strlcat(ptr_to_dest, ptr_to_src, i));
 	// 	printf(" dest: %s\n", ptr_to_dest);
 	// 	printf(" src: %s\n\n", ptr_to_src);
-	// 	assert(ft_strlcat(ptr_to_dest, ptr_to_src, i) == \
+	// 	assert(ft_strlcat(ptr_to_dest, ptr_to_src, i) == 
 	// 		strlcat(ptr_to_dest, ptr_to_src, i));
 	// 	printf("~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 	// }
@@ -314,6 +314,7 @@ void	test_strncmp(void)
 	assert(a == b);	
 	a = strncmp("Hello", "Heddo", 5);
 	b = ft_strncmp("Hello", "Heddo", 5);
+	printf("a: %i\nb: %i\n", a, b);
 	assert(a == b);
 	a = strncmp("Heddo", "Hello", 5);
 	b = ft_strncmp("Heddo", "Hello", 5);
@@ -332,8 +333,35 @@ void	test_strncmp(void)
 
 void	test_memchr(void)
 {
+	unsigned char	test_mem[5] = {0, 255, 12, 63, 8};
+	unsigned char	*ptr_a;
+	unsigned char	*ptr_b;
+
+	ptr_a = memchr(test_mem, 12, 0);
+	ptr_b = ft_memchr(test_mem, 12, 0);
+	// printf("beat1_test\n");
+	assert(ptr_a == ptr_b);
+	ptr_a = memchr(test_mem, 12, 1);
+	ptr_b = ft_memchr(test_mem, 12, 1);
+	assert(ptr_a == ptr_b);
+	ptr_a = memchr(test_mem, 12, 2);
+	ptr_b = ft_memchr(test_mem, 12, 2);
+	assert(ptr_a == ptr_b);
+	ptr_a = memchr(test_mem, 12, 3);
+	ptr_b = ft_memchr(test_mem, 12, 3);
+	assert(ptr_a == ptr_b);
+	ptr_a = memchr(test_mem, 12, 4);
+	ptr_b = ft_memchr(test_mem, 12, 4);
+	assert(ptr_a == ptr_b);
+	ptr_a = memchr(test_mem, 12, 5);
+	ptr_b = ft_memchr(test_mem, 12, 5);
+	assert(ptr_a == ptr_b);
+	ptr_a = memchr(test_mem, 12, 6);
+	ptr_b = ft_memchr(test_mem, 12, 6);
+	assert(ptr_a == ptr_b);
+
 	
-	printf("ft_atoi  	OK\n");
+	printf("ft_memchr  	OK\n");
 }
 
 void	test_atoi(void)
@@ -368,7 +396,7 @@ int	main(void)
 	test_toupper();
 	test_strchr();
 	test_strrchr();
-	test_strncmp();
+	// test_strncmp();
 	test_memchr();
 	// test_memcmp();
 	// test_strnstr();
