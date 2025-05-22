@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:15:17 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/19 15:21:39 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:18:35 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void    *ft_memchr(const void *s, int c, size_t n);
-// ft_memcmp();
+int     ft_memcmp(const void *s1, const void *s2, size_t n);
 // ft_strnstr();
 int		ft_atoi(const char *str);
 // ft_substr();
