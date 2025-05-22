@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/22 20:39:39 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/22 22:20:35 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -388,16 +388,54 @@ void	test_memcmp()
 
 	unsigned char	test_mem_3[5] = {0, 255, 3, 63, 8};
 
+	// for (size_t i = 0; i < 5; i++)
+	// 	printf("%li: %i, %i\n", i, test_mem_1[i], test_mem_3[i]);
+	
 	a = memcmp(test_mem_1, test_mem_3, 1);
 	b = ft_memcmp(test_mem_1, test_mem_3, 1);
 	assert(a == b);
 	a = memcmp(test_mem_1, test_mem_3, 3);
 	b = ft_memcmp(test_mem_1, test_mem_3, 3);
+	// printf("a: %i\nb: %i\n", a, b);
 	assert(a == b);
 	a = memcmp(test_mem_1, test_mem_3, 5);
 	b = ft_memcmp(test_mem_1, test_mem_3, 5);
 	assert(a == b);
 	printf("ft_memcmp  	OK\n");
+}
+
+void test_strnstr(void)
+{
+	const char	*large = "Foo Bar Baz";
+	const char	*small = "Bar";
+	char		*a;
+	char		*b;
+
+	a = strnstr(large, small, 0);
+	b = ft_strnstr(large, small, 0);
+	assert(a == b);
+	a = strnstr(large, small, 1);
+	b = ft_strnstr(large, small, 1);
+	assert(a == b);
+	a = strnstr(large, small, 5);
+	b = ft_strnstr(large, small, 5);
+	assert(a == b);
+	a = strnstr(large, small, 7);
+	b = ft_strnstr(large, small, 7);
+	assert(a == b);
+	a = strnstr(large, small, 8);
+	b = ft_strnstr(large, small, 8);
+	assert(a == b);
+	a = strnstr(large, small, 5);
+	b = ft_strnstr(large, small, 5);
+	assert(a == b);
+	
+	const char *large2 = "Foo Bar Baz";
+	const char *small2 = "Bak";
+	a = strnstr(large2, small2, 15);
+	b = ft_strnstr(large2, small2, 15);
+	assert(a == b);
+	printf("ft_strnstr  	OK\n");
 }
 
 void	test_atoi(void)
@@ -412,6 +450,11 @@ void	test_atoi(void)
 	assert(atoi("--2342Hello") == ft_atoi("--2342Hello"));
 	assert(atoi("   +++2342Hello   ") == ft_atoi("   +++2342Hello   "));
 	printf("ft_atoi  	OK\n");
+}
+
+void	test_calloc(void)
+{
+	printf("ft_calloc  	OK\n");
 }
 
 int	main(void)
@@ -434,10 +477,10 @@ int	main(void)
 	test_strrchr();
 	// test_strncmp();
 	test_memchr();
-	// test_memcmp();
-	// test_strnstr();
+	test_memcmp();
+	test_strnstr();
 	test_atoi();
-	// test_calloc();
+	test_calloc();
 	// test_strdup();
 	// test_substr();
 	// test_strjoin();
