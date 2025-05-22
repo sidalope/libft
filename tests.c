@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/19 15:55:26 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:39:39 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -359,9 +359,45 @@ void	test_memchr(void)
 	ptr_a = memchr(test_mem, 12, 6);
 	ptr_b = ft_memchr(test_mem, 12, 6);
 	assert(ptr_a == ptr_b);
-
-	
 	printf("ft_memchr  	OK\n");
+}
+
+void	test_memcmp()
+{
+	unsigned char	test_mem_1[5] = {0, 255, 12, 63, 8};
+	unsigned char	test_mem_2[5] = {0, 255, 12, 63, 8};
+	int				a;
+	int				b;
+	
+	a = memcmp(test_mem_1, test_mem_2, 0);
+	b = ft_memcmp(test_mem_1, test_mem_2, 0);
+	// printf("beat1_test\n");
+	assert(a == b);
+	a = memcmp(test_mem_1, test_mem_2, 1);
+	b = ft_memcmp(test_mem_1, test_mem_2, 1);
+	assert(a == b);
+	a = memcmp(test_mem_1, test_mem_2, 2);
+	b = ft_memcmp(test_mem_1, test_mem_2, 2);
+	assert(a == b);
+	a = memcmp(test_mem_1, test_mem_2, 5);
+	b = ft_memcmp(test_mem_1, test_mem_2, 5);
+	assert(a == b);
+	a = memcmp(test_mem_1, test_mem_2, 6);
+	b = ft_memcmp(test_mem_1, test_mem_2, 6);
+	assert(a == b);
+
+	unsigned char	test_mem_3[5] = {0, 255, 3, 63, 8};
+
+	a = memcmp(test_mem_1, test_mem_3, 1);
+	b = ft_memcmp(test_mem_1, test_mem_3, 1);
+	assert(a == b);
+	a = memcmp(test_mem_1, test_mem_3, 3);
+	b = ft_memcmp(test_mem_1, test_mem_3, 3);
+	assert(a == b);
+	a = memcmp(test_mem_1, test_mem_3, 5);
+	b = ft_memcmp(test_mem_1, test_mem_3, 5);
+	assert(a == b);
+	printf("ft_memcmp  	OK\n");
 }
 
 void	test_atoi(void)
