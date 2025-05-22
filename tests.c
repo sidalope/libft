@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/22 23:03:27 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/22 23:38:51 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -435,7 +435,7 @@ void test_strnstr(void)
 	a = strnstr(large2, small2, 15);
 	b = ft_strnstr(large2, small2, 15);
 	assert(a == b);
-	printf("ft_strnstr  	OK\n");
+	printf("ft_strnstr	OK\n");
 }
 
 void	test_atoi(void)
@@ -454,7 +454,16 @@ void	test_atoi(void)
 
 void	test_calloc(void)
 {
-	printf("ft_calloc  	WIP\n");
+	printf("ft_calloc	WIP!\n");
+}
+
+void	test_strdup(void)
+{
+	char	*a;
+	
+	a = ft_strdup("Hey, buddy.");
+	printf("%s\n", a);
+	printf("ft_strdup	WIP!\n");
 }
 
 int	main(void)
@@ -481,7 +490,7 @@ int	main(void)
 	test_strnstr();
 	test_atoi();
 	test_calloc();
-	// test_strdup();
+	test_strdup();
 	// test_substr();
 	// test_strjoin();
 	// test_strtrim();
