@@ -6,11 +6,12 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:15:01 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/22 20:58:43 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/22 21:48:00 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdio.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -21,7 +22,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	tmp_s2 = s2;
 	if (!n)
 		return (0);
-	while ((*tmp_s1++ == *tmp_s2++) && n--)
-		continue ;
+	while (n && (*tmp_s1 == *tmp_s2))
+		{
+			tmp_s1++;
+			tmp_s2++;
+			n--;
+		}
 	return (*tmp_s1 - *tmp_s2);
 }
