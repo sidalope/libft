@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/22 23:38:51 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/23 21:56:34 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -460,10 +460,35 @@ void	test_calloc(void)
 void	test_strdup(void)
 {
 	char	*a;
+	char	*b;
 	
 	a = ft_strdup("Hey, buddy.");
-	printf("%s\n", a);
+	b = strdup("Hey, buddy.");
+	// printf("%s\n", a);
+	// printf("%s\n", b);
+	assert(a[0] == b[0]);
+	assert(a[10] == b[10]);
 	printf("ft_strdup	WIP!\n");
+}
+
+void	test_substr(void)
+{
+	char	*a;
+
+	a = ft_substr("Hello", 2, 2);
+	// printf("%s\n", a);
+	assert(a[0] == ("ll")[0]);
+	assert(a[1] == ("ll")[1]);
+	assert(a[2] == ("ll")[2]);
+	printf("ft_substr	WIP!\n"); 
+}
+
+void	test_strjoin(void)
+{
+	char	*a;
+	a = ft_strjoin("Hell", "o");
+	printf("%s\n", a); 
+	printf("ft_strjoin	WIP!\n");
 }
 
 int	main(void)
@@ -491,8 +516,8 @@ int	main(void)
 	test_atoi();
 	test_calloc();
 	test_strdup();
-	// test_substr();
-	// test_strjoin();
+	test_substr();
+	test_strjoin();
 	// test_strtrim();
 	// test_split();
 	// test_itoa();
