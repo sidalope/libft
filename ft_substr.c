@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 13:08:42 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/23 13:38:06 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/23 22:51:51 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ptr_substring;
 
 	i = 0;
-	ptr_substring = malloc(len);	
+	ptr_substring = malloc(len);
 	if (!ptr_substring)
 		return (NULL);
-	while(s[start + i] && len)
+	while (s[start + i] && len)
 	{
 		ptr_substring[i] = s[start + i];
 		i++;
