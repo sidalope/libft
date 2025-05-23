@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 21:51:24 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/23 22:47:56 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/23 22:50:44 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		new_str = malloc(total_len);
 		if (!new_str)
-			return(NULL);
+			return (NULL);
 	}
 	while (*s1)
-		new_str[i++] = (char)*s1++;	
+		new_str[i++] = (char)*s1++;
 	while (*s2)
 		new_str[i++] = (char)*s2++;
 	return (new_str);

@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:15:01 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/22 21:48:00 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/22 23:05:27 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (!n)
 		return (0);
 	while (n && (*tmp_s1 == *tmp_s2))
-		{
-			tmp_s1++;
-			tmp_s2++;
-			n--;
-		}
+	{
+		tmp_s1++;
+		tmp_s2++;
+		n--;
+	}
 	return (*tmp_s1 - *tmp_s2);
 }
