@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.c                                            :+:      :+:    :+:   */
+/*   libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/23 21:56:34 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/25 23:55:26 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,12 +100,12 @@ void	test_bzero(void)
 	ptr_to_view = (char *) ptr_to_set;
 	ft_memset(ptr_to_set, 'f', 10);
 	assert(ptr_to_view[0] == 'f');
-	bzero(ptr_to_set, (0));
+	ft_bzero(ptr_to_set, (0));
 	assert(ptr_to_view[0] == 'f');
-	bzero(ptr_to_set, 5);
+	ft_bzero(ptr_to_set, 5);
 	assert(ptr_to_view[4] == '\0');
 	assert(ptr_to_view[5] == 'f');
-	bzero(ptr_to_set, 10);
+	ft_bzero(ptr_to_set, 10);
 	assert(ptr_to_view[9] == '\0');
 	free(ptr_to_set);
 	printf("ft_bzero	OK\n");
@@ -487,9 +487,56 @@ void	test_strjoin(void)
 {
 	char	*a;
 	a = ft_strjoin("Hell", "o");
-	printf("%s\n", a); 
+	// printf("%s\n", a);
+	assert(a[4] == ("Hello"[4]));
 	printf("ft_strjoin	WIP!\n");
 }
+
+void	test_strtrim(void)
+{
+	
+	printf("ft_strtrim	???\n");
+}
+// void	test_split(void)
+// {
+// 	printf("ft_split	WIP!\n");
+// }
+
+// void	test_itoa(void)
+// {
+// 	printf("ft_itoa	WIP!\n");
+// }
+
+// void	test_strmapi(void)
+// {
+	// printf("ft_strmapi	WIP!\n");
+// }
+
+// void	test_striteri(void)
+// {
+	// printf("ft_striteri	WIP!\n");
+// }
+
+// void	test_putchar_fd(void)
+// {
+	// printf("ft_putchar_fd	WIP!\n");
+// }
+
+// void	test_putstr_fd(void)
+// {
+	// printf("ft_putstr_fd	WIP!\n");
+// }
+
+// void	test_putendl_fd(void)
+// {
+	// printf("ft_putendl_fd	WIP!\n");
+// }
+
+// void	test_putnbr_fd(void)
+// {
+	// printf("ft_putnbr_fd	WIP!\n");
+// }
+
 
 int	main(void)
 {
@@ -518,7 +565,7 @@ int	main(void)
 	test_strdup();
 	test_substr();
 	test_strjoin();
-	// test_strtrim();
+	test_strtrim();
 	// test_split();
 	// test_itoa();
 	// test_strmapi();
