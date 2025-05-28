@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/28 12:07:00 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:49:01 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -371,19 +371,15 @@ void	test_memcmp()
 	
 	a = memcmp(test_mem_1, test_mem_2, 0);
 	b = ft_memcmp(test_mem_1, test_mem_2, 0);
-	printf("a: %i, b: %i\n\n", a, b);
 	assert(a == b);
 	a = memcmp(test_mem_1, test_mem_2, 1);
 	b = ft_memcmp(test_mem_1, test_mem_2, 1);
-	printf("a: %i, b: %i\n\n", a, b);
 	assert(a == b);
 	a = memcmp(test_mem_1, test_mem_2, 2);
 	b = ft_memcmp(test_mem_1, test_mem_2, 2);
-	printf("a: %i, b: %i\n\n", a, b);
 	assert(a == b);
 	a = memcmp(test_mem_1, test_mem_2, 5);
 	b = ft_memcmp(test_mem_1, test_mem_2, 5);
-	printf("a: %i, b: %i\n\n", a, b);
 	assert(a == b);
 	a = memcmp(test_mem_1, test_mem_2, 6);
 	b = ft_memcmp(test_mem_1, test_mem_2, 6);
@@ -497,18 +493,20 @@ void	test_strjoin(void)
 
 void	test_strtrim(void)
 {
-	
-	printf("ft_strtrim	???\n");
+	// char	*a;
+	// a = ft_strtrim("++===-+-hello=x=-++", "+-=");
+	// printf("%s\n", a);
+	printf("ft_strtrim	WIP\n");
 }
 // void	test_split(void)
 // {
 // 	printf("ft_split	WIP!\n");
 // }
 
-// void	test_itoa(void)
-// {
-// 	printf("ft_itoa	WIP!\n");
-// }
+void	test_itoa(void)
+{
+	printf("ft_itoa	WIP!\n");
+}
 
 // void	test_strmapi(void)
 // {
