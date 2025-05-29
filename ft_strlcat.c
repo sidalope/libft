@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:45:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 18:20:36 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/29 15:50:01 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
-
-	// char		*d;
+}
+	// char	*d;
 	// const char	*s;
 	// (void)size;
 	// d = dst;
@@ -50,7 +50,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	// 	*d = '\0';
 	// }
 	// return (ft_strlen(d) + ft_strlen(s));
-	
 	// while (size-- && s[i])
 	// {
 	// 	d[i] = s[i];
@@ -62,4 +61,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	// 	i++;
 	// }
 	// return (i);
-}

@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:18:56 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/28 14:48:19 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/29 15:52:22 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*skipchars(char *s1, const char *to_skip)
 {
 	size_t	i;
 	size_t	ii;
-	
+
 	i = 0;
 	while (s1[i])
 	{
@@ -68,17 +68,17 @@ static char	*skiprchars(char *s1, const char *to_skip)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*tmp_s1;
+	char	*a;
+	char	*b;
 
+	a = skipchars((char *)s1, set);
+	b = skiprchars(a, set);
 	tmp_s1 = malloc(ft_strlen(s1));
 	printf("%s\n", s1);
-	char	*a = skipchars((char *)s1, set);
 	printf("skipchars1: |%s|\n", a);
-	char	*b = skiprchars(a, set);
 	printf("skipchars2: |%s|\n", b);
-	return(tmp_s1);
+	return (tmp_s1);
 }
-
-
 // static char	*skipchars(char *s1, const char *to_skip, int reverse)
 // {
 // 	size_t	i;
