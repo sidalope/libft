@@ -6,13 +6,13 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:53:17 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/29 17:02:13 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/30 16:24:49 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 // #include <limits.h>
-#include "libft"
+#include "libft.h"
 
 static int	intlen(int n)
 {
@@ -37,7 +37,7 @@ char	*ft_itoa(int n)
 
 	num = n;
 	len_n = intlen(n);
-	i_str = (char *) ft_calloc(len_n + 1);
+	i_str = (char *) ft_calloc(len_n + 1, 1);
 	if (!i_str)
 		return (NULL);
 	if (num == 0)

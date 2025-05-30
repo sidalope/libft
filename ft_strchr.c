@@ -6,9 +6,11 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 18:08:40 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/22 20:59:40 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/30 19:07:31 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -17,9 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char) c)
 			return ((char *)(s += i));
 		i++;
 	}
-	return ((char *)(s += i));
+	if ((char) c == '\0')
+		return ((char *)(s += i));
+	return (NULL);
 }

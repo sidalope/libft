@@ -6,44 +6,54 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:55:28 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/23 22:53:44 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/30 20:14:28 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-const char	*skip_whitespace(const char *str)
+int	skip_whitespace(const char *str)
 {
-	while (*str == ' ' || *str == '\n' || *str == '\t'
-		|| *str == '\v' || *str == '\f' || *str == '\r')
-		str++;
-	return (str);
+	int	i;
+
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r'
+		|| str[i] == '+')
+		i++;
+	return (i);
 }
 
 int	ft_atoi(const char *str)
 {
-	int			len;
-	int			minus;
-	int			i;
+	int		i;
+	int		integer;
+	int		len;
+	int		minus;
 
+	i = 0;
+	integer = 0;
 	len = 0;
 	minus = 0;
-	i = 0;
-	if (*str)
+	if (str[i])
 	{
-		str = skip_whitespace(str);
-		if (*str == '-')
+		i = skip_whitespace(str);
+		printf("i: %i\n", i);
+		if (str[i] == '-')
 		{
 			minus = 1;
-			str++;
+			i++;
 		}
+		// if (str[i] == '+')
+		// 	i++;
 		while (str[len] >= '0' && str[len] <= '9')
 		{
-			i = i * 10 + str[len] - '0';
+			integer = integer * 10 + str[len] - '0';
 			len++;
 		}
 		if (minus)
-			i *= -1;
+			integer *= -1;
+		printf("integer: %i\n\n", integer);
 	}
-	return (i);
+	return (integer);
 }
