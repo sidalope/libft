@@ -6,13 +6,15 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:49:02 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/13 12:56:14 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/30 18:22:33 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(char c)
+#include <stdio.h>
+
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		c -= 32;
+		return (c & ~32);
 	return (c);
 }

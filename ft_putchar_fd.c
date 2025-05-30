@@ -6,11 +6,13 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:07:18 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/29 16:20:42 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/30 16:30:16 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, c, 1);
+	write(fd, &c, 1);
 }

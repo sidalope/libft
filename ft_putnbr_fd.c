@@ -6,11 +6,14 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:07:36 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/29 16:21:17 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/30 16:29:47 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	write(fd, n + '0', 1);
+	n += '0';
+	write(fd, &n, 1);
 }

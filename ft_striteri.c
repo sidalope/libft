@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:06:48 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/29 16:20:49 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/30 16:19:48 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i])
 	{
-		f(i, s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }

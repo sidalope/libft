@@ -6,11 +6,12 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:08:11 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/29 16:20:46 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/30 16:23:02 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft"
+#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
