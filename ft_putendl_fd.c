@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/22 20:15:01 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/29 15:48:58 by abisiani         ###   ########.fr       */
+/*   Created: 2025/05/29 16:07:56 by abisiani          #+#    #+#             */
+/*   Updated: 2025/05/29 16:20:44 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
+#include "libft"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int				difference;
-	unsigned char	*tmp_s1;
-	unsigned char	*tmp_s2;
-
-	difference = 0;
-	tmp_s1 = (unsigned char *) s1;
-	tmp_s2 = (unsigned char *) s2;
-	if (!n)
-		return (0);
-	while (n)
-	{
-		difference += *tmp_s1++ - *tmp_s2++;
-		n--;
-	}
-	return (difference);
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
