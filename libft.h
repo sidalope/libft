@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:15:17 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 18:40:46 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:21:39 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
-// ft_strncmp();
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 // ft_memchr();
 // ft_memcmp();
 // ft_strnstr();
-// int		ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 // ft_substr();
 // ft_strjoin();
 // ft_strtrim();

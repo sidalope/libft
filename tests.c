@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 18:48:37 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:43:44 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -255,7 +255,7 @@ void	test_toupper(void)
 	printf("ft_toupper	OK\n");
 }
 
-void test_strchr(void)
+void 	test_strchr(void)
 {
 	const char	*test;
 	char		*output;
@@ -263,16 +263,16 @@ void test_strchr(void)
 	test = "Hello";
 	output = ft_strchr(test, 'l');
 	assert(*output == 'l');
-	printf("\n");
-	printf("%s", output);
-	printf("\n\n");
+	// printf("\n");
+	// printf("%s", output);
+	// printf("\n\n");
 	output = 0;
 	output = ft_strchr("Attempt Two", 't');
 	assert(*output == 't');
 	printf("ft_strchr	OK\n");
 }
 
-void test_strrchr(void)
+void 	test_strrchr(void)
 {
 	const char	*test;
 	char		*output;
@@ -280,17 +280,73 @@ void test_strrchr(void)
 	test = "Hello";
 	output = ft_strrchr(test, 'l');
 	assert(*output == 'l');
-	printf("\n");
-	printf("%s", output);
-	printf("\n\n");
+	// printf("\n");
+	// printf("%s", output);
+	// printf("\n\n");
 	output = 0;
 	output = ft_strrchr("Attempt Two", 't');
 	assert(*output == 't');
 	printf("ft_strrchr	OK\n");
 }
 
-// void	test_atoi(void)
-// {
+void	test_strncmp(void)
+{
+	int	a;
+	int	b;
+
+	a = strncmp("Hello", "Hello", 0);
+	b = ft_strncmp("Hello", "Hello", 0);
+	assert(a == b);
+	a = strncmp("Hello", "Hello", 1);
+	b = ft_strncmp("Hello", "Hello", 1);
+	assert(a == b);
+	a = strncmp("Hello", "Hello", 5);
+	b = ft_strncmp("Hello", "Hello", 5);
+	assert(a == b);
+	a = strncmp("Hello", "Hello", 6);
+	b = ft_strncmp("Hello", "Hello", 6);
+	assert(a == b);
+	a = strncmp("Hello", "Heddo", 0);
+	b = ft_strncmp("Hello", "Heddo", 0);
+	assert(a == b);
+	a = strncmp("Hello", "Heddo", 1);
+	b = ft_strncmp("Hello", "Heddo", 1);
+	assert(a == b);	
+	a = strncmp("Hello", "Heddo", 5);
+	b = ft_strncmp("Hello", "Heddo", 5);
+	assert(a == b);
+	a = strncmp("Heddo", "Hello", 5);
+	b = ft_strncmp("Heddo", "Hello", 5);
+	assert(a == b);
+	a = strncmp("Hello", "Heddo", 6);
+	b = ft_strncmp("Hello", "Heddo", 6);
+	assert(a == b);
+	a = strncmp("Hello", "Hellooo", 6);
+	b = ft_strncmp("Hello", "Hellooo", 6);
+	assert(a == b);
+	a = strncmp("Hello", "Hellooo", -1);
+	b = ft_strncmp("Hello", "Hellooo", -1);
+	assert(a == b);
+	printf("ft_strncmp	OK\n");
+}
+
+void	test_memchr(void)
+{
+	
+	printf("ft_atoi  	OK\n");
+}
+
+void	test_atoi(void)
+{
+	assert(atoi("Hello") == ft_atoi("Hello"));
+	assert(atoi("") == ft_atoi(""));
+	assert(atoi("234") == ft_atoi("234"));
+	assert(atoi("0") == ft_atoi("0"));
+	// printf("orig: %i\nft: %i\n", atoi("dfn"), ft_atoi("dfn"));
+	// printf("orig: %i\nft: %i\n", atoi("--2342Hello"), ft_atoi("--2342Hello"));
+	assert(atoi("-2342Hello") == ft_atoi("-2342Hello"));
+	assert(atoi("--2342Hello") == ft_atoi("--2342Hello"));
+	assert(atoi("   +++2342Hello   ") == ft_atoi("   +++2342Hello   "));
 // 	printf("%i\n", ft_atoi(""));
 // 	printf("%i\n", ft_atoi("5hj"));
 // 	printf("%i\n", ft_atoi("++-+++++598567"));
@@ -299,8 +355,8 @@ void test_strrchr(void)
 // 	printf("%i\n", ft_atoi("      -+-+-+++598567"));
 // 	printf("%i\n", ft_atoi("     -+-+-+++598567dtntn"));
 // 	printf("%i\n", ft_atoi("    -+-+-+++598567xndn4568568"));
-// 	printf("ft_atoi	OK\n");
-// }
+	printf("ft_atoi  	OK\n");
+}
 
 int	main(void)
 {
@@ -324,7 +380,9 @@ int	main(void)
 	// test_memchr();
 	// test_memcmp();
 	// test_strnstr();
-	// test_atoi();
+	test_atoi();
+	// test_calloc();
+	// test_strdup();
 	// test_substr();
 	// test_strjoin();
 	// test_strtrim();
