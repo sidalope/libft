@@ -6,13 +6,12 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 22:28:38 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/22 23:31:03 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/31 18:41:13 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <limits.h>
 #include <stdlib.h>
+#include <limits.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

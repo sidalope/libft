@@ -6,61 +6,34 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:45:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/31 17:00:41 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/31 18:25:40 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	src_len;
 	size_t	dst_len;
+	size_t	src_len;
 
-	len = 0;
+	i = 0;
+	dst_len = 0;
 	src_len = 0;
-	while (dest[len])
-		len++;
-	dest_len = len;
-	while (src[src_len])
-		src_len++;
-	if (size <= len)
-		return (dest_len + src_len);
-	size = size - 1 - len;
-	while (*src++ && size)
+	while (dst[dst_len] && dst_len < size)
+        dst_len++;
+    while (src[src_len])
+        src_len++;
+    if (dst_len == size)
+        return size + src_len;
+    while (src[i] && (dst_len + i + 1) < size)
 	{
-		dst[dst_len + i] = src[i];
-		i++;
-	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+        dst[dst_len + i] = src[i];
+        i++;
+    }
+	if (dst_len + i < size)
+        dst[dst_len + i] = '\0';
+    return dst_len + src_len;
 }
-	// char	*d;
-	// const char	*s;
-	// (void)size;
-	// d = dst;
-	// s = src;
-	// d += ft_strlen(d);
-	// if (size >= ft_strlen(d) + ft_strlen(s) + 1)
-	// {
-	// 	while (*s)
-	// 	{
-	// 		*d++ = *s++;
-	// 		// printf("%c ", *d);
-	// 	}
-	// 	*d = '\0';
-	// }
-	// return (ft_strlen(d) + ft_strlen(s));
-	// while (size-- && s[i])
-	// {
-	// 	d[i] = s[i];
-	// 	i++;
-	// }
-	// i = 0;
-	// while (s[i])
-	// {
-	// 	i++;
-	// }
-	// return (i);

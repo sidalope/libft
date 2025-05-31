@@ -6,14 +6,14 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:18:56 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/29 15:52:22 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/31 18:46:25 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stddef.h>
-#include <stdio.h>
 #include "libft.h"
+
+#include <stdio.h>
 
 static char	*skipchars(char *s1, const char *to_skip)
 {
@@ -79,34 +79,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	printf("skipchars2: |%s|\n", b);
 	return (tmp_s1);
 }
-// static char	*skipchars(char *s1, const char *to_skip, int reverse)
-// {
-// 	size_t	i;
-// 	char	*tmp_s1_ptr;
-
-// 	i = 0;
-// 	tmp_s1_ptr = s1;
-// 	if(reverse)
-// 		tmp_s1_ptr = s1 + ft_strlen(s1) - 1;
-// 	// printf("last char: %c, strlen: %zu\n", *tmp_s1_ptr, ft_strlen(s1));
-// 	while (*tmp_s1_ptr)
-// 	{
-// 		// printf("to compare: %c\n", *tmp_s1_ptr);
-// 		while (to_skip[i])
-// 		{
-// 			// printf("to skip: %c\n", to_skip[i]);
-// 			if (*tmp_s1_ptr == to_skip[i])
-// 				break ;
-// 			i++;
-// 			if (!to_skip[i])
-// 				return (tmp_s1_ptr);
-// 		}
-// 		// printf("\n");
-// 		i = 0;
-// 		if (reverse)
-// 			tmp_s1_ptr--;
-// 		else
-// 			tmp_s1_ptr++;
-// 	}
-// 	return (tmp_s1_ptr);
-// }

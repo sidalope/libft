@@ -6,12 +6,11 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:53:17 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/30 16:24:49 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/31 18:40:53 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-// #include <limits.h>
 #include "libft.h"
 
 static int	intlen(int n)
