@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 18:37:06 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/15 18:48:37 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,15 +264,29 @@ void test_strchr(void)
 	output = ft_strchr(test, 'l');
 	assert(*output == 'l');
 	printf("\n");
-	for(size_t i = 0; i < ft_strlen(output); i++)
-	{
-		printf("%c", output[i]);
-	}
+	printf("%s", output);
 	printf("\n\n");
 	output = 0;
 	output = ft_strchr("Attempt Two", 't');
 	assert(*output == 't');
 	printf("ft_strchr	OK\n");
+}
+
+void test_strrchr(void)
+{
+	const char	*test;
+	char		*output;
+
+	test = "Hello";
+	output = ft_strrchr(test, 'l');
+	assert(*output == 'l');
+	printf("\n");
+	printf("%s", output);
+	printf("\n\n");
+	output = 0;
+	output = ft_strrchr("Attempt Two", 't');
+	assert(*output == 't');
+	printf("ft_strrchr	OK\n");
 }
 
 // void	test_atoi(void)
@@ -305,7 +319,7 @@ int	main(void)
 	test_tolower();
 	test_toupper();
 	test_strchr();
-	// test_strrchr();
+	test_strrchr();
 	// test_strncmp();
 	// test_memchr();
 	// test_memcmp();
