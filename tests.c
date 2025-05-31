@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/15 16:13:22 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/15 18:37:06 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -255,6 +255,26 @@ void	test_toupper(void)
 	printf("ft_toupper	OK\n");
 }
 
+void test_strchr(void)
+{
+	const char	*test;
+	char		*output;
+
+	test = "Hello";
+	output = ft_strchr(test, 'l');
+	assert(*output == 'l');
+	printf("\n");
+	for(size_t i = 0; i < ft_strlen(output); i++)
+	{
+		printf("%c", output[i]);
+	}
+	printf("\n\n");
+	output = 0;
+	output = ft_strchr("Attempt Two", 't');
+	assert(*output == 't');
+	printf("ft_strchr	OK\n");
+}
+
 // void	test_atoi(void)
 // {
 // 	printf("%i\n", ft_atoi(""));
@@ -284,7 +304,7 @@ int	main(void)
 	test_strlcat();
 	test_tolower();
 	test_toupper();
-	// test_strchr();
+	test_strchr();
 	// test_strrchr();
 	// test_strncmp();
 	// test_memchr();
