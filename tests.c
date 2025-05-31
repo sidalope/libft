@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/19 15:43:44 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:55:26 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -347,14 +347,6 @@ void	test_atoi(void)
 	assert(atoi("-2342Hello") == ft_atoi("-2342Hello"));
 	assert(atoi("--2342Hello") == ft_atoi("--2342Hello"));
 	assert(atoi("   +++2342Hello   ") == ft_atoi("   +++2342Hello   "));
-// 	printf("%i\n", ft_atoi(""));
-// 	printf("%i\n", ft_atoi("5hj"));
-// 	printf("%i\n", ft_atoi("++-+++++598567"));
-// 	printf("%i\n", ft_atoi("-+++++++598567"));
-// 	printf("%i\n", ft_atoi("-+++-+++598567"));
-// 	printf("%i\n", ft_atoi("      -+-+-+++598567"));
-// 	printf("%i\n", ft_atoi("     -+-+-+++598567dtntn"));
-// 	printf("%i\n", ft_atoi("    -+-+-+++598567xndn4568568"));
 	printf("ft_atoi  	OK\n");
 }
 
@@ -376,8 +368,8 @@ int	main(void)
 	test_toupper();
 	test_strchr();
 	test_strrchr();
-	// test_strncmp();
-	// test_memchr();
+	test_strncmp();
+	test_memchr();
 	// test_memcmp();
 	// test_strnstr();
 	test_atoi();
