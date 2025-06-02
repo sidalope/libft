@@ -6,21 +6,20 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:18:56 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/31 18:46:25 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/02 21:38:23 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-#include <stdio.h>
-
-static char	*skipchars(char *s1, const char *to_skip)
+static size_t	skipfront(const char *s1, const char *to_skip)
 {
 	size_t	i;
 	size_t	ii;
 
 	i = 0;
+	if (!*to_skip)
+		return ((size_t) 0);
 	while (s1[i])
 	{
 		ii = 0;
@@ -30,22 +29,22 @@ static char	*skipchars(char *s1, const char *to_skip)
 				break ;
 			ii++;
 			if (!to_skip[ii])
-				return (s1 + i);
+				return (i);
 		}
 		i++;
 	}
-	return (s1 + i);
+	return (i);
 }
 
-static char	*skiprchars(char *s1, const char *to_skip)
+static size_t	skiprear(const char *s1, const char *to_skip)
 {
 	size_t	i;
 	size_t	ii;
-	char	*return_str;
 
-	return_str = malloc(ft_strlen(s1));
 	i = ft_strlen(s1) - 1;
-	while (i)
+	if (!*to_skip && *s1)
+		return ((size_t) i);
+	while (s1[i])
 	{
 		ii = 0;
 		while (to_skip[ii])
@@ -54,28 +53,32 @@ static char	*skiprchars(char *s1, const char *to_skip)
 				break ;
 			ii++;
 			if (!to_skip[ii])
-			{
-				ft_strlcpy(return_str, s1, i + 1);
-				return (return_str);
-			}
+				return (i);
 		}
 		i--;
 	}
-	free(return_str);
-	return (s1);
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*tmp_s1;
-	char	*a;
-	char	*b;
+	const char	*tmp;
+	char		*s1_cpy;
+	size_t		start;
+	size_t		end;
 
-	a = skipchars((char *)s1, set);
-	b = skiprchars(a, set);
-	tmp_s1 = malloc(ft_strlen(s1));
-	printf("%s\n", s1);
-	printf("skipchars1: |%s|\n", a);
-	printf("skipchars2: |%s|\n", b);
-	return (tmp_s1);
+	tmp = s1;
+	start = skipfront(s1, set);
+	end = skiprear(s1, set);
+	s1_cpy = ft_calloc(end - start + 2, 1);
+	if (!*set)
+	{
+		ft_strlcpy(s1_cpy, s1, ft_strlen(s1) + 1);
+		return (s1_cpy);
+	}
+	if(!*s1)
+		return (s1_cpy);
+	ft_strlcpy(s1_cpy, tmp + start, end - start + 2);
+	
+	return (s1_cpy);
 }
