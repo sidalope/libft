@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:07:36 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/31 16:12:44 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/03 12:45:43 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,21 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*tmp_s;
+	int	num;
 
-	tmp_s = ft_itoa(n);
-	write(fd, tmp_s, ft_strlen(tmp_s));
-	free(tmp_s);
+	num = 0;
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	num = n % 10 + '0';
+	write(fd, &num, 1);
 }
