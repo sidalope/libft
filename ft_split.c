@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:11:20 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/03 10:28:00 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/03 13:53:46 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,16 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] != c)
 		{
-			if (!(*strings = malloc(wordlen(s + i, c) + 1)))
+			strings = malloc(wordlen(s + i, c) + 1);
+			if (!*strings)
 				return (NULL);
 			ft_strlcpy(*strings, s + i, wordlen(s + i, c) + 1);
 			strings++;
 			i += wordlen(s + i, c);
 		}
 		else
-            i++;
-    }
+			i++;
+	}
 	*strings = (void *) 0;
 	return (strings -= strings_count);
 }

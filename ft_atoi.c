@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:55:28 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/31 16:44:05 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/03 13:54:16 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_atoi(const char *str)
 	int		integer;
 	int		minus;
 
-	i = skip_whitespace(str);;
+	i = skip_whitespace(str);
 	integer = 0;
 	minus = 0;
 	if (str[i])

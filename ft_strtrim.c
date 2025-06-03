@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:18:56 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/03 13:46:00 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/03 13:56:26 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	front;
 	size_t	back;
-	
+
 	if (!s1 || !set)
 		return (NULL);
 	front = 0;
