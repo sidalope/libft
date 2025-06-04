@@ -6,12 +6,11 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:15:01 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/29 15:48:58 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/05/31 18:40:46 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <stdio.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

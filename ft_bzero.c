@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 16:06:13 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/25 23:31:47 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/03 13:00:45 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
 
+	if (n == 0)
+		return ;
 	ptr = (unsigned char *) s;
 	while (n--)
 	{

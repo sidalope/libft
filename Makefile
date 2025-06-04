@@ -50,4 +50,4 @@ test: re
 debug:
 	gdb ./libft
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re test debug
