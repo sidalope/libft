@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:15:17 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/05 15:25:56 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/06 00:28:45 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-void	del(void *node)
-{
-	ft_bzero(node, sizeof(t_list));
-}
 
 #endif
