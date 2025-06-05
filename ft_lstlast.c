@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/12 17:49:02 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/05 10:57:46 by abisiani         ###   ########.fr       */
+/*   Created: 2025/06/05 12:49:21 by abisiani          #+#    #+#             */
+/*   Updated: 2025/06/05 15:24:36 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c & ~32);
-	return (c);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
