@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:53:10 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/05 15:24:22 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/06 00:14:51 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst)
-		return (NULL);
+		return ;
 	while (lst->next)
 	{
 		f(lst->content);

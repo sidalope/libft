@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 12:33:07 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/05 15:24:39 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/06 00:45:58 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = lst;
-	lst = &new;
+	new->next = *lst;
+	*lst = new;
 }

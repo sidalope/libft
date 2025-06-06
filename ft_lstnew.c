@@ -6,10 +6,11 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 11:26:08 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/05 15:24:41 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/06 00:08:48 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
@@ -21,5 +22,5 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	new_node->content = content;
 	new_node->next = NULL;
-	return (&new_node);
+	return (new_node);
 }
