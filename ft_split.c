@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:11:20 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/03 14:06:13 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/06 13:19:29 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,22 @@ static size_t	wordlen(char const *s, char c)
 	return (i);
 }
 
+static void	*free_strings(char **strings)
+{
+	size_t	i;
+
+	if (!strings)
+		return (NULL);
+	i = 0;
+	while (strings[i])
+	{
+		free(strings[i]);
+		i++;
+	}
+	free(strings);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -63,7 +79,7 @@ char	**ft_split(char const *s, char c)
 		{
 			*strings = malloc(wordlen(s + i, c) + 1);
 			if (!*strings)
-				return (NULL);
+				return (free_strings(strings));
 			ft_strlcpy(*strings, s + i, wordlen(s + i, c) + 1);
 			strings++;
 			i += wordlen(s + i, c);

@@ -11,12 +11,15 @@
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS= -I. -Wall -Werror -Wextra
-AR=ar rcs
-CC=cc
-NAME=libft.a
+.PHONY: all clean fclean re bonus
 
-HDR=libft.h
+CFLAGS=-I. -Wall -Werror -Wextra
+
+AR=ar rcs
+
+CC=cc
+
+NAME=libft.a
 
 SRC=ft_isalpha.c ft_toupper.c ft_tolower.c ft_isdigit.c ft_isalnum.c\
 	ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c\
@@ -35,14 +38,18 @@ OBJBONUS=$(BONUS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+ifeq ($(BONUSMODE),1)
+OBJ_ALL := $(OBJ) $(OBJBONUS)
+else
+OBJ_ALL := $(OBJ)
+endif
+
+$(NAME): $(OBJ_ALL)
 	$(AR) $@ $^
 
-bonus: $(OBJBONUS)
-	$(AR) libft.a $^
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+bonus:
+	$(MAKE) fclean
+	$(MAKE) BONUSMODE=1 all
 
 clean:
 	rm -f $(OBJ) $(OBJBONUS)
@@ -55,5 +62,3 @@ re: fclean all
 # test: re
 # 	$(CC) $(CFLAGS) -o libft libft.c -L. -lft -lbsd
 # 	./libft
-
-.PHONY: all clean fclean re bonus
