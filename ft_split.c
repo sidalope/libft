@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:11:20 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/06 14:03:45 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/07 11:26:39 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,12 @@ static size_t	wordlen(char const *s, char c)
 	return (i);
 }
 
-static void	*free_strings(char **strings)
+static void	*free_split(char **strings, size_t strings_count)
 {
 	size_t	i;
 
-	if (!strings)
-		return (NULL);
 	i = 0;
-	while (strings[i])
+	while (i <= strings_count)
 	{
 		free(strings[i]);
 		i++;
@@ -65,28 +63,28 @@ static void	*free_strings(char **strings)
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
-	size_t	strings_count;
+	size_t	ii;
 	char	**strings;
 
 	i = 0;
-	strings_count = count_strings(s, c);
-	strings = (char **) malloc((strings_count + 1) * sizeof(char *));
+	ii = 0;
+	strings = (char **) malloc((count_strings(s, c) + 1) * sizeof(char *));
 	if (!strings)
 		return (NULL);
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
-			*strings = malloc(wordlen(s + i, c) + 1);
-			if (!*strings)
-				return (free_strings(strings));
-			ft_strlcpy(*strings, s + i, wordlen(s + i, c) + 1);
-			strings++;
+			strings[ii] = malloc(wordlen(s + i, c) + 1);
+			if (!strings[ii])
+				return (free_split(strings, ii));
+			ft_strlcpy(strings[ii], s + i, wordlen(s + i, c) + 1);
+			ii++;
 			i += wordlen(s + i, c);
 		}
 		else
 			i++;
 	}
-	*strings = (void *) 0;
-	return (strings -= strings_count);
+	strings[ii] = (void *) 0;
+	return (strings);
 }

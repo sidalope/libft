@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:19:25 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/06 01:09:08 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/07 12:48:50 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*node;
 	t_list	*next;
 
-	node = *lst;
-	while (node)
+	while (*lst)
 	{
-		if (node->next)
-		{
-			next = node->next;
-			del(node->content);
-			free(node);
-			node = next;
-		}
-		else
-		{
-			del(node->content);
-			free(node);
-			break ;
-		}
+		next = (*lst)->next;
+		if (del)
+			del((*lst)->content);
+		free(*lst);
+		*lst = next;
 	}
-	*lst = NULL;
+	lst = NULL;
 }
