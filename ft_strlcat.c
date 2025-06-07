@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:45:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/03 13:55:01 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/07 15:39:21 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,30 +36,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }
-	// char	*d;
-	// const char	*s;
-	// (void)size;
-	// d = dst;
-	// s = src;
-	// d += ft_strlen(d);
-	// if (size >= ft_strlen(d) + ft_strlen(s) + 1)
-	// {
-	// 	while (*s)
-	// 	{
-	// 		*d++ = *s++;
-	// 		// printf("%c ", *d);
-	// 	}
-	// 	*d = '\0';
-	// }
-	// return (ft_strlen(d) + ft_strlen(s));
-	// while (size-- && s[i])
-	// {
-	// 	d[i] = s[i];
-	// 	i++;
-	// }
-	// i = 0;
-	// while (s[i])
-	// {
-	// 	i++;
-	// }
-	// return (i);
