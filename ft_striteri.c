@@ -6,7 +6,7 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:06:48 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/30 16:19:48 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/10 22:16:24 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	int		i;
 
 	i = 0;
+	if (!f)
+		return ;
 	while (s[i])
 	{
 		f(i, &s[i]);
