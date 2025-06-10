@@ -47,6 +47,9 @@ endif
 $(NAME): $(OBJ_ALL)
 	$(AR) $@ $^
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $^ -o $@
+
 bonus:
 	$(MAKE) fclean
 	$(MAKE) BONUSMODE=1 all

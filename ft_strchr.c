@@ -6,11 +6,11 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 18:08:40 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/30 19:07:31 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/10 21:35:21 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

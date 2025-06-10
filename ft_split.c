@@ -6,11 +6,10 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:11:20 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/07 11:26:39 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/10 21:35:26 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static size_t	count_strings(char const *s, char c)

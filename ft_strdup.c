@@ -6,11 +6,10 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 23:11:48 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/31 18:32:52 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/10 21:35:29 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s)

@@ -6,12 +6,10 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 21:51:24 by abisiani          #+#    #+#             */
-/*   Updated: 2025/05/31 22:45:47 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/10 21:35:38 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <limits.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

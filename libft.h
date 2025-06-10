@@ -6,14 +6,16 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:15:17 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/06 00:28:45 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/10 21:40:19 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
+# include <stdlib.h>
+# include <stdint.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

@@ -6,11 +6,10 @@
 /*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:58:15 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/07 13:04:09 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/06/10 21:33:51 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
