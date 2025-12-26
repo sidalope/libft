@@ -1,5 +1,6 @@
+*.a
 *.o
 *.pdf
-*~
 *.out
 *.gch
+tests/**

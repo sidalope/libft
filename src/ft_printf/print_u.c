@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   print_u.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/12 17:43:35 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/10 21:35:57 by abisiani         ###   ########.fr       */
+/*   Created: 2025/07/16 15:16:44 by abisiani          #+#    #+#             */
+/*   Updated: 2025/12/26 16:07:03 by abisani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlen(const char *s)
+int	print_u(unsigned int n)
 {
-	int	length;
+	int	len;
 
-	length = 0;
-	while (s[length])
-		length++;
-	return (length);
+	len = uintlen(n);
+	put_unsnbr_fd(n, 1);
+	return (len);
 }

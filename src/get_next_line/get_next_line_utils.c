@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 21:51:24 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/10 21:35:38 by abisiani         ###   ########.fr       */
+/*   Created: 2025/08/20 18:48:33 by abisani           #+#    #+#             */
+/*   Updated: 2025/12/26 16:08:30 by abisani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_gnl_strjoin(char **s1, char *s2)
 {
 	size_t	i;
 	size_t	ii;
@@ -20,20 +20,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	ii = 0;
-	new_str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	new_str = malloc(ft_strlen(*s1) + ft_strlen(s2) + 1);
 	if (!new_str)
 		return (NULL);
-	while (s1[i])
+	while (*s1 && (*s1)[i])
 	{
-		new_str[i] = (char) s1[i];
+		new_str[i] = (*s1)[i];
 		i++;
 	}
-	while (s2[ii])
-	{
-		new_str[i] = (char) s2[ii];
-		i++;
-		ii++;
-	}
-	new_str[i] = '\0';
-	return (new_str);
+	while (*s2 && s2[ii])
+		new_str[i++] = s2[ii++];
+	new_str[i] = 0;
+	free(*s1);
+	*s1 = new_str;
+	return (*s1);
 }
