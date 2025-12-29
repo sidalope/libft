@@ -6,7 +6,7 @@
 /*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:43:35 by abisiani          #+#    #+#             */
-/*   Updated: 2025/12/26 16:05:31 by abisani          ###   ########.fr       */
+/*   Updated: 2025/12/29 13:02:36 by abisani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	length;
+	size_t	length;
 
 	length = 0;
-	if (!s)
-		return (0);
 	while (s[length])
 		length++;
 	return (length);

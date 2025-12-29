@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 23:18:56 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/10 14:26:46 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/12/29 13:08:59 by abisani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	front;
 	size_t	back;
 
-	if (!s1)
-		return (NULL);
 	if (!set)
 		return (ft_strdup(s1));
 	front = 0;

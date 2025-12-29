@@ -6,7 +6,7 @@
 /*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 11:52:38 by abisiani          #+#    #+#             */
-/*   Updated: 2025/12/26 16:07:00 by abisani          ###   ########.fr       */
+/*   Updated: 2025/12/27 09:41:46 by abisani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	print_s(char *s)
 	len = 0;
 	if (s == NULL)
 		return (write(1, "(null)", 6));
-	while (*s)
-		len += write(1, s++, 1);
+	len += write(1, s, ft_strlen(s));
 	return (len);
 }

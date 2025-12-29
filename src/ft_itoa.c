@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:53:17 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/10 21:33:30 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/12/27 10:11:58 by abisani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_itoa(int n)
 	char	*i_str;
 
 	num = n;
-	len_n = intlen(n);
+	len_n = ft_intlen(n);
 	i_str = (char *) ft_calloc(len_n + 1, 1);
 	if (!i_str)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 22:35:09 by abisiani          #+#    #+#             */
-/*   Updated: 2025/12/26 16:06:35 by abisani          ###   ########.fr       */
+/*   Updated: 2025/12/27 09:25:35 by abisani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	parse_format_specifier(const char *format, va_list args)
 	else if (*format == 'd' || *format == 'i')
 		len = print_di(va_arg(args, int));
 	else if (*format == 'u')
-		len = print_u(va_arg(args, int));
+		len = print_u(va_arg(args, unsigned int));
 	else if (*format == 'x')
 		len = print_x(va_arg(args, unsigned int));
 	else if (*format == 'X')

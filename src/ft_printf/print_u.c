@@ -6,7 +6,7 @@
 /*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 15:16:44 by abisiani          #+#    #+#             */
-/*   Updated: 2025/12/26 16:07:03 by abisani          ###   ########.fr       */
+/*   Updated: 2025/12/27 10:14:57 by abisani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	print_u(unsigned int n)
 {
 	int	len;
 
-	len = uintlen(n);
-	put_unsnbr_fd(n, 1);
+	len = ft_uintlen(n);
+	ft_putunbr_fd(n, 1);
 	return (len);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abisiani <abisiani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:15:17 by abisiani          #+#    #+#             */
-/*   Updated: 2025/06/10 21:40:19 by abisiani         ###   ########.fr       */
+/*   Updated: 2025/12/27 10:10:10 by abisani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_putunbr_fd(unsigned int n, int fd);
+int		ft_uintlen(unsigned int n);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -74,9 +76,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // ft_printf functions
 int		ft_printf(const char *format, ...);
-int		intlen(int n);
-int		uintlen(unsigned int n);
-void	put_unsnbr_fd(unsigned int n, int fd);
+int		ft_intlen(int n);
 int		print_c(int c);
 int		print_s(char *s);
 int		print_p(void *ptr);
@@ -84,7 +84,6 @@ int		print_di(int n);
 int		print_u(unsigned int n);
 int		print_x(unsigned int n);
 int		print_x_cap(unsigned int n);
-int		print_perc(void);
 
 // get_next_line functions
 char	*get_next_line(int fd);
