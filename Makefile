@@ -18,6 +18,7 @@ CFLAGS=-I. -Wall -Werror -Wextra
 AR=ar rcs
 
 NAME = libft.a
+TEST_EXEC = test
 
 OBJ_DIR = obj
 SRC_DIR = src
@@ -63,5 +64,5 @@ fclean: clean
 re: fclean all
 
 test: re
-	$(CC) $(CFLAGS) -o test tests/tests.c -L. -lft -lbsd
-	./test
+	$(CC) $(CFLAGS) -o $(TEST_EXEC) tests/tests.c -L. -lft -lbsd
+	./$(TEST_EXEC)
