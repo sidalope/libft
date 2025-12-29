@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tests.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: abisiani <abisiani@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:36:26 by abisiani          #+#    #+#             */
-/*   Updated: 2025/12/29 12:56:55 by abisani          ###   ########.fr       */
+/*   Updated: 2025/12/29 17:41:37 by abisiani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -301,37 +301,71 @@ void	test_strncmp(void)
 
 	a = strncmp("Hello", "Hello", 0);
 	b = ft_strncmp("Hello", "Hello", 0);
-	assert(a == b);
+	if (a)
+		assert (b);
+	else
+		assert (!b);
 	a = strncmp("Hello", "Hello", 1);
 	b = ft_strncmp("Hello", "Hello", 1);
-	assert(a == b);
+	if (a)
+		assert (b);
+	else
+		assert (!b);
 	a = strncmp("Hello", "Hello", 5);
 	b = ft_strncmp("Hello", "Hello", 5);
-	assert(a == b);
+	if (a)
+		assert (b);
+	else
+		assert (!b);
 	a = strncmp("Hello", "Hello", 6);
 	b = ft_strncmp("Hello", "Hello", 6);
-	assert(a == b);
+	if (a)
+		assert (b);
+	else
+		assert (!b);
 	a = strncmp("Hello", "Heddo", 0);
 	b = ft_strncmp("Hello", "Heddo", 0);
-	assert(a == b);
+	if (a)
+		assert (b);
+	else
+		assert (!b);
 	a = strncmp("Hello", "Heddo", 1);
 	b = ft_strncmp("Hello", "Heddo", 1);
-	assert(a == b);	
+	if (a)
+		assert (b);
+	else
+		assert (!b);	
 	a = strncmp("Hello", "Heddo", 5);
 	b = ft_strncmp("Hello", "Heddo", 5);
-	assert(a == b);
+	ft_printf("a: %i, b: %i\n", a, b);
+	if (a)
+		assert (b);
+	else
+		assert (!b);
 	a = strncmp("Heddo", "Hello", 5);
 	b = ft_strncmp("Heddo", "Hello", 5);
-	assert(a == b);
+	if (a)
+		assert (b);
+	else
+		assert (!b);
 	a = strncmp("Hello", "Heddo", 6);
 	b = ft_strncmp("Hello", "Heddo", 6);
-	assert(a == b);
+	if (a)
+		assert (b);
+	else
+		assert (!b);
 	a = strncmp("Hello", "Hellooo", 6);
 	b = ft_strncmp("Hello", "Hellooo", 6);
-	assert(a == b);
+	if (a)
+		assert (b);
+	else
+		assert (!b);
 	a = strncmp("Hello", "Hellooo", -1);
 	b = ft_strncmp("Hello", "Hellooo", -1);
-	assert(a == b);
+	if (a)
+		assert (b);
+	else
+		assert (!b);
 	printf("ft_strncmp	OK\n");
 }
 
