@@ -6,7 +6,7 @@
 /*   By: abisani <abisani@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 22:35:09 by abisiani          #+#    #+#             */
-/*   Updated: 2025/12/27 09:25:35 by abisani          ###   ########.fr       */
+/*   Updated: 2025/12/29 18:32:01 by abisani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,30 @@ int	parse_format_specifier(const char *format, va_list args)
 
 int	ft_printf(const char *format, ...)
 {
-	size_t	count;
+	int		count;
 	va_list	args;
+	int		non_format_chars;
 
 	count = 0;
+	non_format_chars = 0;
 	va_start(args, format);
 	while (*format)
 	{
-		if (*format != '%')
+		while (format[non_format_chars] && format[non_format_chars] != '%')
+			non_format_chars++;
+		write(1, format, non_format_chars);
+		count += non_format_chars;
+		format += non_format_chars;
+		if (*format == '%')
 		{
-			write(1, format, 1);
-			count++;
-		}
-		else if (++format)
-			count += parse_format_specifier(format, args);
-		else
-			write(1, "%", 1);
-		if (*format)
 			format++;
+			if (*format)
+				count += parse_format_specifier(format, args);
+			else
+				count += write(1, "%", 1);
+			format++;
+		}
+		non_format_chars = 0;
 	}
 	va_end(args);
 	return (count);
